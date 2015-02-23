@@ -27,7 +27,7 @@ class CoursesController < ApplicationController
 
   def update
       if @course.update(course_params)
-        redirect_to @course, notice: 'Course was successfully updated.'
+        redirect_to courses_path, notice: 'Course was successfully updated.'
       else
         render :edit
       end
