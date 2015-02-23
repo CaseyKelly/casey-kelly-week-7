@@ -4,7 +4,8 @@
   <%= f.label :title %>
   <%= f.text_field :title %>
   <p>
-    Daytime? <%= f.check_box(:daytime) %>
+    <%= f.label :daytime %>
+    <%= f.check_box :daytime, {}, "true", "false" %>
         <p>
           <%= f.submit 'Add course!' %>
           <% end %>

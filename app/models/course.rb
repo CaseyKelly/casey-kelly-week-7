@@ -1,3 +1,4 @@
 class Course < ActiveRecord::Base
-  validates :title, :daytime, presence: true
+  validates :title, presence: true
+  validates :daytime, :inclusion => { :in => [true, false] }
 end
