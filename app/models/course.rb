@@ -1,3 +1,3 @@
 class Course < ActiveRecord::Base
-  validates :title, presence: true
+  validates :title, :daytime, presence: true
 end

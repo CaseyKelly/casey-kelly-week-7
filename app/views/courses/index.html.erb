@@ -1,6 +1,9 @@
-<h1>Projects</h1>
+<h1>Courses</h1>
 
+<p>
+  <%= link_to 'Add a course', new_course_path %>
 
+<p>
 <table border='1'>
   <thead>
     <tr>
@@ -13,6 +16,7 @@
     <% @courses.each do |course| %>
     <tr>
       <td><%= link_to course.title, course_path(course) %></td>
+      <td><%= course.daytime %></td>
       <td>
         <div class="text-right">
           <%= link_to 'Edit', edit_course_path(course) %>
