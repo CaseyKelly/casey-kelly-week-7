@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'sessions#newg'
+  root 'sessions#new'
 
   resources :courses
 
