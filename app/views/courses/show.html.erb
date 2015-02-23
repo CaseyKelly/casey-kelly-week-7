@@ -1,9 +1,4 @@
 <h1><%= @course.title %></h1>
 
-
-<dl>
-  <p><dt>Title</dt>
-    <dd><%= @course.title %></dd></p>
-  <p><dt>Daytime?</dt>
-    <dd><%= @course.daytime %></dd></p>
-</dl>
+  <p><b>Title:</b> <%= @course.title %></p>
+  <p><b>Day or Night?</b> <% if @course.daytime == true %> <%= 'Day' %> <% else %> <%= 'Night' %> <% end %></p>
