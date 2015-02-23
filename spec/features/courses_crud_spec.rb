@@ -24,8 +24,15 @@ describe 'users can crud courses' do
     visit '/courses'
     click_on "Edit"
     fill_in "Title", with: "Ballers"
-    click_on "Update cgourse!"
+    click_on "Update course!"
     expect(page).to have_content "Ballers"
+  end
+
+  it "User can delete a course" do
+    @my_course = Course.create(title: 'Balls', daytime: true)
+    visit '/courses'
+    click_on "Delete"
+    expect(page).to have_content "Course was successfully deleted."
   end
 
 end
