@@ -8,6 +8,14 @@
 </head>
 <body>
 
+  <% flash.each do |type, message| %>
+    <% if type == "notice" %>
+    <div class="alert alert-success"><b><center><%= message %></b></center></div>
+    <% elsif type == "alert" %>
+    <div class="alert alert-danger"><b><center><%= message %></b></center></div>
+    <% end %>
+    <% end %>
+
   <% if current_user %>
   <%= link_to 'Home', users_path %>
   <%= link_to current_user.user_name, user_path(current_user) %>
