@@ -19,5 +19,13 @@ describe 'users can crud courses' do
     expect(page).to have_content "Balls"
   end
 
+  it "User can edit a course" do
+    @my_course = Course.create(title: 'Balls', daytime: true)
+    visit '/courses'
+    click_on "Edit"
+    fill_in "Title", with: "Ballers"
+    click_on "Update cgourse!"
+    expect(page).to have_content "Ballers"
+  end
 
 end
