@@ -1,0 +1,27 @@
+
+  <!-- <%= link_to 'Create Project', new_project_path %> -->
+  <h1>Projects</h1>
+
+
+<table border='1'>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Daytime?</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @courses.each do |course| %>
+    <tr>
+      <td><%= link_to course.title, course_path(course) %></td>
+      <td>
+        <div class="text-right">
+          <%= link_to 'Edit', edit_course_path(course) %>
+          <%= link_to 'Delete', course, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
