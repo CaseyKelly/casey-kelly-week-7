@@ -8,7 +8,7 @@
   <thead>
     <tr>
       <th>Title</th>
-      <th>Daytime?</th>
+      <th>Day or Night</th>
     </tr>
   </thead>
 
@@ -16,7 +16,9 @@
     <% @courses.each do |course| %>
     <tr>
       <td><%= link_to course.title, course_path(course) %></td>
-      <td><%= course.daytime %></td>
+
+      <td><% if course.daytime == true %> <%= 'Day' %> <% else %> <%= 'Night' %> <% end %></td>
+
       <td>
         <div class="text-right">
           <%= link_to 'Edit', edit_course_path(course) %>
